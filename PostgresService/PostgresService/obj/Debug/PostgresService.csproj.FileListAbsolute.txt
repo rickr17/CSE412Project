@@ -1,0 +1,12 @@
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\bin\PostgresService.dll.config
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\bin\PostgresService.dll
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\bin\PostgresService.pdb
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\bin\Npgsql.dll
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\bin\System.Threading.Tasks.Extensions.dll
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\bin\Npgsql.xml
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\bin\System.Threading.Tasks.Extensions.xml
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.csprojResolveAssemblyReference.cache
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.csproj.CoreCompileInputs.cache
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.csproj.CopyComplete
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.dll
+c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.pdb
