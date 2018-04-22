@@ -16,6 +16,10 @@ namespace PostgresService
 		[WebGet(UriTemplate="GetData?min={min}&max={max}&title={title}&tag={tag}")]
 		List<string> GetData(int min, int max, string title, string tag);
 
+		[OperationContract]
+		[WebGet(UriTemplate = "GetRating?min={min}&max={max}&title={title}&tag={tag}")]
+		List<string> GetRating(int min, int max, string title, string tag);
+
 	}
 
 
