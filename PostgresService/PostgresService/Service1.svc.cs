@@ -18,20 +18,56 @@ namespace PostgresService
 			var connString = "Host=localhost;Username=postgres;Password=9001;Database=movies";
 			List<string> results = new List<string>();
 
-			using (var conn = new NpgsqlConnection(connString))
+			if (title == "startup" && tag == "startup") //load graphs on startup of application 
 			{
-				conn.Open();
+				using (var conn = new NpgsqlConnection(connString))
+				{
+					conn.Open();
 
-				// Retrieve all rows
-				using (var cmd = new NpgsqlCommand("SELECT g.name AS name, COUNT(m.movieid) AS moviecount FROM movies m, genres g, hasagenre h WHERE m.movieid = h.movieid AND g.genreid = h.genreid GROUP BY g.genreid", conn))
-				using (var reader = cmd.ExecuteReader())
-					while (reader.Read())
+					// Retrieve all rows
+					using (var cmd = new NpgsqlCommand("SELECT g.name AS name, COUNT(m.movieid) AS moviecount FROM movies m, genres g, hasagenre h WHERE m.movieid = h.movieid AND g.genreid = h.genreid GROUP BY g.genreid", conn))
+					using (var reader = cmd.ExecuteReader())
+						while (reader.Read())
+						{
+							results.Add(reader.GetString(0));
+							results.Add(reader.GetString(1));
+
+						}
+
+				}
+			}
+			else
+			{
+				if (title == "" && tag == "") //filter by rating only
+				{
+					using (var conn = new NpgsqlConnection(connString))
 					{
-						results.Add(reader.GetString(0));
-						results.Add(reader.GetString(1));
+						conn.Open();
+
+						// Retrieve all rows
+						using (var cmd = new NpgsqlCommand("SELECT g.name AS name, COUNT(m.movieid) AS moviecount FROM movies m, genres g, hasagenre h, ratings r WHERE(r.rating >= " + min + " AND r.rating <= " + max + ") AND m.movieid = r.movieid AND m.movieid = h.movieid AND g.genreid = h.genreid GROUP BY g.genreid", conn))
+						using (var reader = cmd.ExecuteReader())
+							while (reader.Read())
+							{
+								results.Add(reader.GetString(0));
+								results.Add(reader.GetString(1));
+
+							}
 
 					}
+				}
+				else if (title != "" && tag == "") //filter by title only
+				{
 
+				}
+				else if (title == "" && tag == "") //filter by tag only
+				{
+
+				}
+				else if (title != "" && tag != "") //filter by all 3
+				{
+
+				}
 			}
 			return results;
 		}
@@ -41,23 +77,58 @@ namespace PostgresService
 			var connString = "Host=localhost;Username=postgres;Password=9001;Database=movies";
 			List<string> results = new List<string>();
 
-			using (var conn = new NpgsqlConnection(connString))
+			if (title == "startup" && tag == "startup")
 			{
-				conn.Open();
+				using (var conn = new NpgsqlConnection(connString))
+				{
+					conn.Open();
 
-				// Retrieve all rows
-				using (var cmd = new NpgsqlCommand("SELECT g.name AS name, AVG(r.rating) AS rating FROM movies m, genres g, hasagenre h, ratings r, users u WHERE m.movieid = h.movieid AND g.genreid = h.genreid AND r.movieid = m.movieid AND u.userid = r.userid GROUP BY g.genreid", conn))
-				using (var reader = cmd.ExecuteReader())
-					while (reader.Read())
+					// Retrieve all rows
+					using (var cmd = new NpgsqlCommand("SELECT g.name AS name, AVG(r.rating) AS rating FROM movies m, genres g, hasagenre h, ratings r, users u WHERE m.movieid = h.movieid AND g.genreid = h.genreid AND r.movieid = m.movieid AND u.userid = r.userid GROUP BY g.genreid", conn))
+					using (var reader = cmd.ExecuteReader())
+						while (reader.Read())
+						{
+							results.Add(reader.GetString(0));
+							results.Add(reader.GetString(1));
+
+						}
+
+				}
+			}
+			else
+			{
+				if (title == "" && tag == "") //filter by rating only
+				{
+					using (var conn = new NpgsqlConnection(connString))
 					{
-						results.Add(reader.GetString(0));
-						results.Add(reader.GetString(1));
+						conn.Open();
+
+						// Retrieve all rows
+						using (var cmd = new NpgsqlCommand("SELECT g.name AS name, AVG(r.rating) AS rating FROM movies m, genres g, hasagenre h, ratings r, users u WHERE(r.rating >= " + min + " AND r.rating <= " + max + ") m.movieid = h.movieid AND g.genreid = h.genreid AND r.movieid = m.movieid AND u.userid = r.userid GROUP BY g.genreid", conn))
+						using (var reader = cmd.ExecuteReader())
+							while (reader.Read())
+							{
+								results.Add(reader.GetString(0));
+								results.Add(reader.GetString(1));
+
+							}
 
 					}
+				}
+				else if (title != "" && tag == "") //filter by title only
+				{
 
+				}
+				else if (title == "" && tag == "") //filter by tag only
+				{
+
+				}
+				else if (title != "" && tag != "") //filter by all 3
+				{
+
+				}
 			}
 			return results;
 		}
 	}
 }
-//SELECT g.name AS name, AVG(r.rating) AS rating FROM movies m, genres g, hasagenre h, ratings r, users u WHERE m.movieid = h.movieid AND g.genreid = h.genreid AND r.movieid = m.movieid AND u.userid = r.userid GROUP BY g.genreid
