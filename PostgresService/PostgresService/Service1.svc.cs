@@ -99,27 +99,13 @@ namespace PostgresService
 			{
 				if (title == "" && tag == "") //filter by rating only
 				{
-					using (var conn = new NpgsqlConnection(connString))
-					{
-						conn.Open();
-
-						// Retrieve all rows
-						using (var cmd = new NpgsqlCommand("SELECT g.name AS name, AVG(r.rating) AS rating FROM movies m, genres g, hasagenre h, ratings r, users u WHERE(r.rating >= " + min + " AND r.rating <= " + max + ") m.movieid = h.movieid AND g.genreid = h.genreid AND r.movieid = m.movieid AND u.userid = r.userid GROUP BY g.genreid", conn))
-						using (var reader = cmd.ExecuteReader())
-							while (reader.Read())
-							{
-								results.Add(reader.GetString(0));
-								results.Add(reader.GetString(1));
-
-							}
-
-					}
+					
 				}
-				else if (title != "" && tag == "") //filter by title only
+				else if (title != "" && tag == "") //filter by title only && rating
 				{
 
 				}
-				else if (title == "" && tag == "") //filter by tag only
+				else if (title == "" && tag == "") //filter by tag only && rating
 				{
 
 				}
