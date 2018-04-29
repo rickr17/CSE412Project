@@ -13,8 +13,12 @@ namespace PostgresService
 	public interface IService1
 	{
 		[OperationContract]
-		[WebGet(UriTemplate="GetData?min={min}&max={max}&title={title}&tag={tag}")]
-		List<string> GetData(int min, int max, string title, string tag);
+		[WebGet(UriTemplate="GetCount?min={min}&max={max}&title={title}&tag={tag}")]
+		List<string> GetCount(int min, int max, string title, string tag);
+
+		[OperationContract]
+		[WebGet(UriTemplate = "GetRating?min={min}&max={max}&title={title}&tag={tag}")]
+		List<string> GetRating(int min, int max, string title, string tag);
 
 	}
 
