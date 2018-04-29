@@ -10,3 +10,15 @@ c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\Po
 c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.csproj.CopyComplete
 c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.dll
 c:\users\11ric\onedrive\documents\visual studio 2017\Projects\PostgresService\PostgresService\obj\Debug\PostgresService.pdb
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\bin\PostgresService.dll.config
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\bin\PostgresService.dll
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\bin\PostgresService.pdb
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\bin\Npgsql.dll
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\bin\Npgsql.xml
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\obj\Debug\PostgresService.csprojResolveAssemblyReference.cache
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\obj\Debug\PostgresService.csproj.CoreCompileInputs.cache
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\obj\Debug\PostgresService.csproj.CopyComplete
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\obj\Debug\PostgresService.dll
+C:\Users\dexim\source\repos\CSE412Project\PostgresService\PostgresService\obj\Debug\PostgresService.pdb
